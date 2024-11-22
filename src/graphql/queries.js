@@ -27,6 +27,7 @@ const GET_AUTHORS_INFO = gql`
       avatar {
         url
       }
+      id
       name
       slug
     }
