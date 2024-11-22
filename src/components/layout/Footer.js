@@ -1,9 +1,22 @@
-import React from 'react'
+import { Typography } from "@mui/material";
+import React from "react";
 
 function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <footer>
+      <Typography
+        component="p"
+        variant="p"
+        bgcolor="#f7f7f7"
+        color="primary"
+        padding="10px"
+        textAlign="center"
+        mt="10px"
+      >
+        پروژه وبلاگ با GraphQL
+      </Typography>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
