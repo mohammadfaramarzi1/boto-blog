@@ -1,12 +1,21 @@
-import { useQuery } from "@apollo/client";
 import React from "react";
+
+import { Grid } from "@mui/material";
+import { useQuery } from "@apollo/client";
 import { GET_BLOGS_INFO } from "../../graphql/queries";
 
 function Blogs() {
   const { loading, data, error } = useQuery(GET_BLOGS_INFO);
   console.log({ loading, error, data });
 
-  return <div>Blogs</div>;
+  if (loading) return <h4>Loading...</h4>;
+  if (error) return <h4>Error...</h4>;
+
+  return (
+    <Grid container spacing={2}>
+      <Grid item xs={12} sm={6} md={4} lg={3}>item</Grid>
+    </Grid>
+  );
 }
 
 export default Blogs;
