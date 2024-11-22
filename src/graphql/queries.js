@@ -2,23 +2,35 @@ import { gql } from "@apollo/client";
 
 const GET_BLOGS_INFO = gql`
   query {
-  posts {
-    author {
-      ... on Author {
-        name
-        avatar {
-          url
+    posts {
+      author {
+        ... on Author {
+          name
+          avatar {
+            url
+          }
         }
       }
-    }
-    id
-    slug
-    title
-    coverPhoto {
-      url
+      id
+      slug
+      title
+      coverPhoto {
+        url
+      }
     }
   }
-}
 `;
 
-export { GET_BLOGS_INFO };
+const GET_AUTHORS_INFO = gql`
+  query {
+    authors {
+      avatar {
+        url
+      }
+      name
+      slug
+    }
+  }
+`;
+
+export { GET_BLOGS_INFO, GET_AUTHORS_INFO };
