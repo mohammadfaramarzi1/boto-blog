@@ -11,23 +11,23 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function CardEL({ data }) {
-  console.log(data);
+function CardEL({ author, coverPhoto, title, slug }) {
+  console.log({author, coverPhoto, title})
   return (
     <Card sx={{ boxShadow: "rgba(0,0,0, 0.1) 0px 4px 12px", borderRadius: 4 }}>
       <CardHeader
-        avatar={<Avatar src={data.author.avatar.url} sx={{ marginLeft: 2 }} />}
+        avatar={<Avatar src={author.avatar.url} sx={{ marginLeft: 2 }} />}
         title={
           <Typography component="p" variant="p" color="text.secondary">
-            {data.author.name}
+            {author.name}
           </Typography>
         }
       />
       <CardMedia
         component="img"
         height="194"
-        image={data.coverPhoto.url}
-        alt={data.slug}
+        image={coverPhoto.url}
+        alt={slug}
       />
       <CardContent>
         <Typography
@@ -36,13 +36,13 @@ function CardEL({ data }) {
           color="text.primary"
           fontWeight={600}
         >
-          {data.title}
+          {title}
         </Typography>
       </CardContent>
       <Divider variant="middle" sx={{ margin: "10px" }} />
       <CardActions>
         <Link
-          to={`/blogs/${data.slug}`}
+          to={`/blogs/${slug}`}
           style={{ textDecoration: "none", width: "100%" }}
         >
           <Button
