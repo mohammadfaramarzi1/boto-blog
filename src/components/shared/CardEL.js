@@ -41,7 +41,7 @@ function CardEL({ data }) {
       </CardContent>
       <Divider variant="middle" sx={{ margin: "10px" }} />
       <CardActions>
-        {/* <Link> to=`/blogs/${data.slug}` style={{textDecoration: "none"}} */}
+        <Link> to=`/blogs/${data.slug}` style={{textDecoration: "none"}}
           <Button
             variant="outlined"
             size="small"
@@ -49,7 +49,7 @@ function CardEL({ data }) {
           >
             مطالعه مقاله
           </Button>
-        {/* </Link> */}
+        </Link>
       </CardActions>
     </Card>
   );
