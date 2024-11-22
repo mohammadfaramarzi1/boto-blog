@@ -1,11 +1,12 @@
 import HomePage from "./components/home/HomePage";
-import Header from "./components/layout/Header"
+import Layout from "./components/layout/Index";
 
 function App() {
   return (
     <>
-      <Header />
-      <HomePage />
+      <Layout>
+        <HomePage />
+      </Layout>
     </>
   );
 }
