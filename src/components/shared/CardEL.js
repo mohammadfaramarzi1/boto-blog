@@ -41,7 +41,10 @@ function CardEL({ data }) {
       </CardContent>
       <Divider variant="middle" sx={{ margin: "10px" }} />
       <CardActions>
-        <Link> to=`/blogs/${data.slug}` style={{textDecoration: "none"}}
+        <Link
+          to={`/blogs/${data.slug}`}
+          style={{ textDecoration: "none", width: "100%" }}
+        >
           <Button
             variant="outlined"
             size="small"
