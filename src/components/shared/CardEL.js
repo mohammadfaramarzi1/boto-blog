@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CardEL() {
+function CardEL({props}) {
   return (
     <div>CardEL</div>
   )
