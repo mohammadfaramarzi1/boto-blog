@@ -18,6 +18,7 @@ import sanitizeHTML from "sanitize-html";
 
 import { GET_AUTHOR_INFO } from "../../graphql/queries";
 import CardEL from "../shared/CardEL";
+import Loader from "../shared/Loader";
 
 function AuthorPage() {
   const { slug } = useParams();
@@ -29,7 +30,7 @@ function AuthorPage() {
 
   console.log({ data });
 
-  if (loading) return <h3>Loading...</h3>;
+  if (loading) return <Loader />
   if (error) return <h3>Error...</h3>;
 
   return (
