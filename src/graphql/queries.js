@@ -11,6 +11,7 @@ const GET_BLOGS_INFO = gql`
         }
       }
     }
+    id
     slug
     title
     coverPhoto {

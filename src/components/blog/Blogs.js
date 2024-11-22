@@ -14,14 +14,11 @@ function Blogs() {
 
   return (
     <Grid container spacing={2}>
-      {
-        data.posts.map(post => (
-      <Grid item xs={12} sm={6} md={4} lg={3} key={post.id}>
-        <CardEL {...post} />
-      </Grid>
-          
-        ))
-      }
+      {data.posts.map((post) => (
+        <Grid item xs={12} sm={6} md={4} key={post.id}>
+          <CardEL data={post} />
+        </Grid>
+      ))}
     </Grid>
   );
 }
