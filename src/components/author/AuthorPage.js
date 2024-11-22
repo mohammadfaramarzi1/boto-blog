@@ -17,6 +17,7 @@ import {
 import sanitizeHTML from "sanitize-html";
 
 import { GET_AUTHOR_INFO } from "../../graphql/queries";
+import CardEL from "../shared/CardEL";
 
 function AuthorPage() {
   const { slug } = useParams();
@@ -63,66 +64,17 @@ function AuthorPage() {
           <Typography component="h3" variant="h5" fontWeight={700}>
             مقالات {data.author.name}
           </Typography>
-          <Grid container></Grid>
-          {data.author.post.map((post) => (
-            <Grid item xs={12} sm={6} md={4} key={post.id}>
-              <Card
-                sx={{
-                  boxShadow: "rgba(0,0,0, 0.1) 0px 4px 12px",
-                  borderRadius: 4,
-                }}
-              >
-                <CardHeader
-                  avatar={
-                    <Avatar
-                      src={data.author.avatar.url}
-                      sx={{ marginLeft: 2 }}
-                    />
-                  }
-                  title={
-                    <Typography
-                      component="p"
-                      variant="p"
-                      color="text.secondary"
-                    >
-                      {data.author.name}
-                    </Typography>
-                  }
+          <Grid container mt={2} mb={2} spacing={2}>
+            {data.author.post.map((post) => (
+              <Grid item xs={12} sm={6} md={4} key={post.id}>
+                <CardEL
+                  coverPhoto={post.coverPhoto}
+                  title={post.title}
+                  slug={post.slug}
                 />
-                <CardMedia
-                  component="img"
-                  height="194"
-                  image={post.coverPhoto.url}
-                  alt={post.slug}
-                />
-                <CardContent>
-                  <Typography
-                    component="h3"
-                    variant="h6"
-                    color="text.primary"
-                    fontWeight={600}
-                  >
-                    {post.title}
-                  </Typography>
-                </CardContent>
-                <Divider variant="middle" sx={{ margin: "10px" }} />
-                <CardActions>
-                  <Link
-                    to={`/blogs/${post.slug}`}
-                    style={{ textDecoration: "none", width: "100%" }}
-                  >
-                    <Button
-                      variant="outlined"
-                      size="small"
-                      sx={{ width: "100%", borderRadius: 3 }}
-                    >
-                      مطالعه مقاله
-                    </Button>
-                  </Link>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
       </Grid>
     </Container>
