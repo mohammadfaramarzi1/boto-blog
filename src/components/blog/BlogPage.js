@@ -8,6 +8,7 @@ import { Grid } from "@mui/material";
 import ArrowBackIosNewOutlinedIcon from "@mui/icons-material/ArrowBackIosNewOutlined";
 import sanitizeHTML from "sanitize-html";
 import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/Comments";
 
 function BlogPage() {
   const { slug } = useParams();
@@ -66,6 +67,9 @@ function BlogPage() {
         </Grid>
         <Grid item xs={12}>
           <CommentForm slug={data.post.slug} />
+        </Grid>
+        <Grid item xs={12}>
+          <Comments slug={slug} />
         </Grid>
       </Grid>
     </Container>
