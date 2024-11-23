@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function CommentForm({ slug }) {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
 
@@ -55,8 +55,8 @@ function CommentForm({ slug }) {
           label="نام کاربری"
           variant="outlined"
           sx={{ width: "100%" }}
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </Grid>
       <Grid item xs={12} m={2}>
